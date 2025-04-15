@@ -67,7 +67,7 @@ public class Main {
             out.close();
             System.out.println("howtodoinjava_demo.xlsx written successfully on disk.");
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         } //dupa sa luam varsta tuturor si sa o incrementam cu 10
     }
