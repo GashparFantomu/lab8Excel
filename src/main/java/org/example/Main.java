@@ -41,15 +41,16 @@ public class Main {
         }
 
         XSSFWorkbook worklook = new XSSFWorkbook();
-        XSSFSheet worksheet = worklook.createSheet("TestExcel");
+        XSSFSheet sheet1 = worklook.createSheet("TestExcel");
 
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
         data.put("5", new Object[] {"69", "Adolf", "Hitler"});
+
         Set<String> keyset = data.keySet();
         int rownum = 0;
         for (String key : keyset) {
 
-            Row row = sheet.createRow(rownum++);
+            Row row = sheet1.createRow(rownum++);
             Object [] objArr = data.get(key);
             int cellnum = 0;
             for (Object obj : objArr)
@@ -62,13 +63,13 @@ public class Main {
             }
         }
         try {
-            FileOutputStream out = new FileOutputStream(new File("howtodoinjava_demo.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("TestExcel.xlsx"));
             worklook.write(out);
             out.close();
-            System.out.println("howtodoinjava_demo.xlsx written successfully on disk.");
+            System.out.println("ai scris in fisier");
         }
         catch (IOException e) {
             e.printStackTrace();
-        } //dupa sa luam varsta tuturor si sa o incrementam cu 10
+        } //dupa sa luam varsta tuturor si sa o incrementam cu 10, sa afisez media
     }
 }
